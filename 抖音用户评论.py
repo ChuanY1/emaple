@@ -21,11 +21,12 @@ def vb(p1):
 # """
 def order():
     j = 1
+    rid = input("请输入视频id：")
     data_list = []
     # 打开
     page = ChromiumPage()
     # 监听访问
-    url = 'https://www.douyin.com/video/7468910530917338378?modeFrom='
+    url = f'https://www.douyin.com/video/{rid}?modeFrom='
     page.listen.start('aweme/v1/web/comment/list')
     page.get(url)
     p1 = page.ele('@data-e2e=comment-list')
